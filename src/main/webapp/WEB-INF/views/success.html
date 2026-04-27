@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật thành công</title>
+    <style>
+        .container { border: 1px solid #ddd; padding: 20px; width: 400px; border-radius: 8px; }
+        .success-msg { color: #28a745; font-weight: bold; }
+        .info-label { font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="success-msg">Cập nhật hồ sơ thành công!</h2>
+    <hr>
+    <p>
+        <span class="info-label">Tên cửa hàng:</span>
+        <span th:text="${profileData.name}">Tên mặc định</span>
+    </p>
+    <p>
+        <span class="info-label">Số điện thoại:</span>
+        <span th:text="${profileData.phone}">Số mặc định</span>
+    </p>
+    <p>
+        <span class="info-label">Trạng thái:</span>
+        <span th:text="${profileData.active ? 'Đang hoạt động' : 'Tạm dừng'}"></span>
+    </p>
+
+    <br>
+    <a th:href="@{/merchant/update-profile}">Quay lại chỉnh sửa</a>
+</div>
+</body>
+</html>
